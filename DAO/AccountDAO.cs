@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,8 +31,20 @@ namespace RestaurantIS.DAO
 
         public bool Login(string username, string password)
         {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hashData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hashedPassword = "";
+
+            foreach(byte item in hashData)
+            {
+                hashedPassword += item;
+            }
+
+
+
             string query = "USP_Login @username , @password";
-            DataTable result = DataProvider.InstanceOfDataProvider.ExecuteQuery(query, new object[] {username, password});
+            DataTable result = DataProvider.InstanceOfDataProvider.ExecuteQuery(query, new object[] {username, hashedPassword});
 
             return result.Rows.Count > 0;
         }
@@ -105,7 +118,7 @@ namespace RestaurantIS.DAO
 
         public bool ResetPassword(string username)
         {
-            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery("UPDATE Account SET password = '1' WHERE username = '" + username + "'") > 0;
+            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery("UPDATE Account SET password = '1962026656160185351301320480154111117132155' WHERE username = '" + username + "'") > 0;
         }
     }
 }

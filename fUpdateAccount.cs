@@ -45,7 +45,7 @@ namespace RestaurantIS
                     }
                     else
                     {
-                        MessageBox.Show("New password can't be empty");
+                        MessageBox.Show("New password can't be empty"); 
                     }
                 }
                 else
