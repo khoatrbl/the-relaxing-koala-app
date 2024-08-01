@@ -137,12 +137,12 @@ GO
 
 
 -- Add menu items
-INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Traditional Cheese Pizza', 9, 16.76, N'cheese pizza')
-INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Traditional Pepperoni Pizza', 9, 17.99, N'pepperoni pizza')
-INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Spaghetti Bolognese', 9, 7.99, N'bolognese')
-INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Latte', 10, 3.25, N'latte')
-INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Cappuccino', 10, 4.5, N'cappuccino')
-INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Espresso', 10, 3.5, N'espresso')
+INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Traditional Cheese Pizza', 1, 16.76, N'cheese pizza')
+INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Traditional Pepperoni Pizza', 1, 17.99, N'pepperoni pizza')
+INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Spaghetti Bolognese', 1, 7.99, N'bolognese')
+INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Latte', 2, 3.25, N'latte')
+INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Cappuccino', 2, 4.5, N'cappuccino')
+INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'Espresso', 2, 3.5, N'espresso')
 GO
 
 -- Procedure to get Invoices with tableId and Stats
