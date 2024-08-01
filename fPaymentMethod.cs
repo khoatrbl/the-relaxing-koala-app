@@ -86,8 +86,6 @@ namespace RestaurantIS
               
             }
             
-            
-
             Payment payment = new Payment();
             bool isSuccessful = false;
 
@@ -117,6 +115,7 @@ namespace RestaurantIS
             {
                 InvoiceDAO.Instance.MakePayment(InvoiceID, totalPrice);
                 MessageBox.Show("Transaction successful!");
+
                 this.Close();
             }
             else

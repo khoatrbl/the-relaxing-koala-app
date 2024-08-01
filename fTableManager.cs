@@ -103,10 +103,10 @@ namespace RestaurantIS
             // Update the previously-colored button
             lastButton = (Button)currentBtn;
 
-            showOrderByTable(tableID);
+            ShowOrderByTable(tableID);
         }
 
-        private void showOrderByTable(int tableID)
+        private void ShowOrderByTable(int tableID)
         {
             listViewOrderList.Items.Clear();
 
@@ -130,7 +130,7 @@ namespace RestaurantIS
 
                 listViewOrderList.Items.Add(listViewItem);
             }
-   
+
         }
 
         private void OrderBtn_Click(object? sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace RestaurantIS
                 this.Hide();
                 fOrder.ShowDialog();
                 this.Show();
-                showOrderByTable(tableID);
+                ShowOrderByTable(tableID);
                 LoadTable();
             }
             else
@@ -162,25 +162,47 @@ namespace RestaurantIS
                 {
                     if (MessageBox.Show("Are you sure you want to checkout for " + currentTable.Name + "?", "Warning", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        // TODO: Choose payment method, if cash then calculate change
-                        // pass invoiceID into the payment method form
-                        // call MakePayment() inside that form with the corresponding payment method
                         fPaymentMethod fPaymentMethod = new fPaymentMethod(currentTable.TotalOrderPrice, invoiceID);
                         this.Hide();
                         fPaymentMethod.ShowDialog();
                         this.Show();
 
-                        
-                        showOrderByTable(currentTable.ID);
+
+                        ShowOrderByTable(currentTable.ID);
                         LoadTable();
                     }
                 }
-            } else
-            {
-                MessageBox.Show("Please select a table first.");    
             }
-            
+            else
+            {
+                MessageBox.Show("Please select a table first.");
+            }
+        }
 
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            LoadTable();
+
+        }
+
+        private void btnReserve_Click(object sender, EventArgs e)
+        {
+            if (currentTable == null)
+            {
+                MessageBox.Show("Please choose a table!");
+            }
+            else
+            {
+                fReservation fReservation = new fReservation(currentTable.ID);
+                fReservation.ShowDialog();
+                LoadTable();
+            }
+        }
+
+        private void reservationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fReservationManagement fReservationManagement = new fReservationManagement();
+            fReservationManagement.Show();
         }
     }
 }

@@ -12,21 +12,21 @@ namespace RestaurantIS.DAO
     {
         private static MenuItemDAO instance;
 
-        public static MenuItemDAO Instance 
+        public static MenuItemDAO Instance
         {
             get { if (instance == null) instance = new MenuItemDAO(); return instance; }
-            private set => instance = value; 
+            private set => instance = value;
         }
 
         private MenuItemDAO() { }
 
-        public List<MenuItem> getListOfMenuItemByCategoryID(int categoryID)
+        public List<MenuItem> GetListOfMenuItemByCategoryID(int categoryID)
         {
             List<MenuItem> listOfMenuItemsByCategory = new List<MenuItem>();
 
             DataTable data = DataProvider.InstanceOfDataProvider.ExecuteQuery("SELECT * FROM MenuItems WHERE idCategory = " + categoryID);
 
-            foreach (DataRow row in data.Rows) 
+            foreach (DataRow row in data.Rows)
             {
                 MenuItem menuItem = new MenuItem(row);
 
@@ -35,7 +35,7 @@ namespace RestaurantIS.DAO
             return listOfMenuItemsByCategory;
         }
 
-        public List<MenuItem> getListOfMenuItems()
+        public List<MenuItem> GetListOfMenuItems()
         {
             List<MenuItem> listOfMenuItems = new List<MenuItem>();
 
@@ -48,6 +48,32 @@ namespace RestaurantIS.DAO
             }
 
             return listOfMenuItems;
+        }
+
+        public DataTable GetListOfMenuItemsWithAlternativeColumnNames()
+        {
+            return DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_GetListOfMenuItems");
+        }
+
+        public bool InsertMenuItem(string name, int categoryId, float price, string keyword)
+        {
+            string query = string.Format("INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'{0}', {1}, {2}, N'{3}')", name, categoryId, price, keyword);
+
+            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
+        }
+
+        public bool UpdateMenuItem(int id, string name, int categoryId, float price, string keyword)
+        {
+            string query = String.Format("UPDATE MenuItems SET name = N'{0}', idCategory = {1}, price = {2}, keyword = N'{3}' WHERE id = {4}", name, categoryId, price, keyword, id);
+            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
+        }
+
+        public bool DeleteMenuItem(int menuItemId) 
+        {
+            OrderItemDAO.Instance.DeleteOrderItemByItemID(menuItemId);
+
+            string query = String.Format("DELETE MenuItems WHERE id = {0}", menuItemId);
+            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
         }
     }
 }

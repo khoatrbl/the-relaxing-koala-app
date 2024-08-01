@@ -25,7 +25,7 @@ namespace RestaurantIS.DAO
             List<OrderItem> listOfOrderItems = new List<OrderItem>();
 
             string query = "SELECT mItems.name, iItems.count, mItems.price, mItems.price * iItems.count as total FROM InvoiceItems as iItems, Invoice as i, MenuItems as mItems \r\nWHERE iItems.idInvoice = i.id AND iItems.idMenuItem = mItems.id AND i.stats = 0 AND i.idTable = " + tableID;
-            DataTable data = DataProvider.InstanceOfDataProvider.ExecuteQuery(query);
+            DataTable data = DataProvider.InstanceOfDataProvider.ExecuteQuery(query);   
 
             foreach (DataRow row in data.Rows) 
             {
@@ -34,6 +34,11 @@ namespace RestaurantIS.DAO
             }
 
             return listOfOrderItems;
+        }
+
+        public void DeleteOrderItemByItemID(int id)
+        {
+            DataProvider.InstanceOfDataProvider.ExecuteQuery("DELETE InvoiceItems WHERE idMenuItem = " + id);
         }
     }
 }

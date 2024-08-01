@@ -30,6 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             loginAsManagerToolStripMenuItem = new ToolStripMenuItem();
+            reservationsToolStripMenuItem = new ToolStripMenuItem();
             OrderListLabel = new Label();
             panel2 = new Panel();
             listViewOrderList = new ListView();
@@ -39,6 +40,8 @@
             columnHeader4 = new ColumnHeader();
             panel4 = new Panel();
             panel3 = new Panel();
+            btnReserve = new Button();
+            RefreshBtn = new Button();
             PaymentBtn = new Button();
             OrderBtn = new Button();
             panel5 = new Panel();
@@ -55,7 +58,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { loginAsManagerToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { loginAsManagerToolStripMenuItem, reservationsToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
@@ -69,6 +72,13 @@
             loginAsManagerToolStripMenuItem.Size = new Size(141, 24);
             loginAsManagerToolStripMenuItem.Text = "Login as Manager";
             loginAsManagerToolStripMenuItem.Click += loginAsManagerToolStripMenuItem_Click;
+            // 
+            // reservationsToolStripMenuItem
+            // 
+            reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
+            reservationsToolStripMenuItem.Size = new Size(106, 24);
+            reservationsToolStripMenuItem.Text = "Reservations";
+            reservationsToolStripMenuItem.Click += reservationsToolStripMenuItem_Click;
             // 
             // OrderListLabel
             // 
@@ -132,13 +142,39 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnReserve);
+            panel3.Controls.Add(RefreshBtn);
             panel3.Controls.Add(PaymentBtn);
             panel3.Controls.Add(OrderBtn);
             panel3.Location = new Point(847, 41);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(152, 348);
+            panel3.Size = new Size(152, 408);
             panel3.TabIndex = 3;
+            // 
+            // btnReserve
+            // 
+            btnReserve.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReserve.Location = new Point(3, 206);
+            btnReserve.Margin = new Padding(3, 4, 3, 4);
+            btnReserve.Name = "btnReserve";
+            btnReserve.Size = new Size(142, 93);
+            btnReserve.TabIndex = 3;
+            btnReserve.Text = "Reserve";
+            btnReserve.UseVisualStyleBackColor = true;
+            btnReserve.Click += btnReserve_Click;
+            // 
+            // RefreshBtn
+            // 
+            RefreshBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            RefreshBtn.Location = new Point(3, 307);
+            RefreshBtn.Margin = new Padding(3, 4, 3, 4);
+            RefreshBtn.Name = "RefreshBtn";
+            RefreshBtn.Size = new Size(142, 93);
+            RefreshBtn.TabIndex = 2;
+            RefreshBtn.Text = "Refresh";
+            RefreshBtn.UseVisualStyleBackColor = true;
+            RefreshBtn.Click += RefreshBtn_Click;
             // 
             // PaymentBtn
             // 
@@ -248,5 +284,8 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private Button RefreshBtn;
+        private Button btnReserve;
+        private ToolStripMenuItem reservationsToolStripMenuItem;
     }
 }

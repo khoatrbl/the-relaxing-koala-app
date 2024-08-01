@@ -32,3 +32,5 @@ D:\RestaurantInformationSystem\RestaurantIS\obj\Debug\net6.0-windows\RestaurantI
 D:\RestaurantInformationSystem\RestaurantIS\obj\Debug\net6.0-windows\RestaurantIS.fUpdateAccount.resources
 D:\RestaurantInformationSystem\RestaurantIS\obj\Debug\net6.0-windows\RestaurantIS.ucMenuItemLayout.resources
 D:\RestaurantInformationSystem\RestaurantIS\obj\Debug\net6.0-windows\RestaurantIS.fChangeDisplayName.resources
+D:\RestaurantInformationSystem\RestaurantIS\obj\Debug\net6.0-windows\RestaurantIS.fReservation.resources
+D:\RestaurantInformationSystem\RestaurantIS\obj\Debug\net6.0-windows\RestaurantIS.fReservationManagement.resources

@@ -93,6 +93,16 @@ namespace RestaurantIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coke {
+            get {
+                object obj = ResourceManager.GetObject("coke", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap credit_card {
             get {
                 object obj = ResourceManager.GetObject("credit-card", resourceCulture);
@@ -126,6 +136,16 @@ namespace RestaurantIS.Properties {
         internal static System.Drawing.Bitmap pizza_with_drink {
             get {
                 object obj = ResourceManager.GetObject("pizza-with-drink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RK_placeholder {
+            get {
+                object obj = ResourceManager.GetObject("RK-placeholder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

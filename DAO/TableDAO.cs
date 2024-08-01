@@ -35,5 +35,19 @@ namespace RestaurantIS.DAO
             }
             return tableList;
         }
+
+        public bool AddTable(string name, string status)
+        {
+            string query = String.Format("INSERT TableList (name, stats) VALUES (N'{0}', N'{1}')", name, status);
+
+            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0; 
+        }
+
+        public bool UpdateTable(int id, string name, string status)
+        {
+            string query = String.Format("UPDATE TableList SET name = N'{0}', stats = N'{1}' WHERE id = {2}", name, status, id);
+
+            return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
+        }
     }
 }

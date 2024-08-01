@@ -13,6 +13,12 @@
     <Compile Update="fManager.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="fReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="fReservationManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UserControls\ucMenuItemLayout.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -14,27 +14,32 @@ namespace RestaurantIS
 {
     public partial class fUpdateAccount : Form
     {
-        public fUpdateAccount()
+        private string username;
+
+        public string Username { get => username; set => username = value; }
+
+        public fUpdateAccount(string username)
         {
+            this.username = username;
             InitializeComponent();
+
         }
 
         private void UpdateAccount()
         {
-            string username = txbUsername.Text;
             string oldPassword = txbOldPassword.Text;
             string newPassword = txbNewPassword.Text;
             string reEnterPassword = txbReEnterPassword.Text;
 
-            if (AccountDAO.InstanceOfAccountDAO.CheckAccountByUsername(username))
+            if (AccountDAO.InstanceOfAccountDAO.CheckAccountByUsername(this.username))
             {
-                if (AccountDAO.InstanceOfAccountDAO.CheckOldPasswordOfUsername(username, oldPassword))
+                if (AccountDAO.InstanceOfAccountDAO.CheckOldPasswordOfUsername(this.username, oldPassword))
                 {
                     if (newPassword != "")
                     {
                         if (newPassword == reEnterPassword)
                         {
-                            AccountDAO.InstanceOfAccountDAO.ChangePassword(username, newPassword);
+                            AccountDAO.InstanceOfAccountDAO.ChangePassword(this.username, newPassword);
                             MessageBox.Show("Password is successfully updated");
                             this.Close();
                         }
@@ -45,7 +50,7 @@ namespace RestaurantIS
                     }
                     else
                     {
-                        MessageBox.Show("New password can't be empty"); 
+                        MessageBox.Show("New password can't be empty");
                     }
                 }
                 else

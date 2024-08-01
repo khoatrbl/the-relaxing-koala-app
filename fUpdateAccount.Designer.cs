@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            txbUsername = new TextBox();
-            label1 = new Label();
             panel3 = new Panel();
             txbNewPassword = new TextBox();
             label3 = new Label();
@@ -42,44 +39,16 @@
             panel5 = new Panel();
             txbOldPassword = new TextBox();
             label5 = new Label();
-            panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(txbUsername);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(799, 66);
-            panel1.TabIndex = 0;
-            // 
-            // txbUsername
-            // 
-            txbUsername.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            txbUsername.Location = new Point(324, 13);
-            txbUsername.Name = "txbUsername";
-            txbUsername.Size = new Size(402, 38);
-            txbUsername.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(64, 16);
-            label1.Name = "label1";
-            label1.Size = new Size(127, 31);
-            label1.TabIndex = 0;
-            label1.Text = "Username:";
-            // 
             // panel3
             // 
             panel3.Controls.Add(txbNewPassword);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(0, 148);
+            panel3.Location = new Point(1, 84);
             panel3.Name = "panel3";
             panel3.Size = new Size(799, 66);
             panel3.TabIndex = 2;
@@ -107,7 +76,7 @@
             // 
             panel4.Controls.Add(txbReEnterPassword);
             panel4.Controls.Add(label4);
-            panel4.Location = new Point(0, 220);
+            panel4.Location = new Point(1, 156);
             panel4.Name = "panel4";
             panel4.Size = new Size(799, 66);
             panel4.TabIndex = 3;
@@ -134,7 +103,7 @@
             // confirmBtn
             // 
             confirmBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            confirmBtn.Location = new Point(221, 311);
+            confirmBtn.Location = new Point(222, 247);
             confirmBtn.Name = "confirmBtn";
             confirmBtn.Size = new Size(167, 49);
             confirmBtn.TabIndex = 4;
@@ -145,7 +114,7 @@
             // BackBtn
             // 
             BackBtn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            BackBtn.Location = new Point(394, 311);
+            BackBtn.Location = new Point(395, 247);
             BackBtn.Name = "BackBtn";
             BackBtn.Size = new Size(167, 49);
             BackBtn.TabIndex = 5;
@@ -156,7 +125,7 @@
             // 
             panel5.Controls.Add(txbOldPassword);
             panel5.Controls.Add(label5);
-            panel5.Location = new Point(0, 76);
+            panel5.Location = new Point(1, 12);
             panel5.Name = "panel5";
             panel5.Size = new Size(799, 66);
             panel5.TabIndex = 1;
@@ -186,18 +155,15 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = BackBtn;
-            ClientSize = new Size(800, 374);
+            ClientSize = new Size(800, 322);
             Controls.Add(panel5);
             Controls.Add(BackBtn);
             Controls.Add(confirmBtn);
             Controls.Add(panel4);
             Controls.Add(panel3);
-            Controls.Add(panel1);
             Name = "fUpdateAccount";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Update Account";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
@@ -208,10 +174,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
-        private TextBox txbUsername;
-        private Label label1;
         private Panel panel3;
         private TextBox txbNewPassword;
         private Label label3;

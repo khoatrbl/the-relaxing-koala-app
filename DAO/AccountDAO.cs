@@ -1,4 +1,4 @@
-﻿using RestaurantIS.DTO;
+﻿    using RestaurantIS.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,16 +31,8 @@ namespace RestaurantIS.DAO
 
         public bool Login(string username, string password)
         {
-            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
-            byte[] hashData = new MD5CryptoServiceProvider().ComputeHash(temp);
 
-            string hashedPassword = "";
-
-            foreach(byte item in hashData)
-            {
-                hashedPassword += item;
-            }
-
+            string hashedPassword = GetHash(password);
 
 
             string query = "USP_Login @username , @password";
@@ -86,14 +78,17 @@ namespace RestaurantIS.DAO
             DataTable data = DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_CheckPasswordByUsername @username", new object[] { username });
             foreach (DataRow row in data.Rows)
             {
-                result = row["password"].ToString() == password;
+                string hashedPassword = GetHash(password);
+               
+                result = row["password"].ToString() == hashedPassword;
             }
             return result;
         }
 
         public void ChangePassword(string username, string password) 
         {
-            DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_UpdatePassword @username , @newPassword", new object[] { username, password });
+            string hashedPassword = GetHash(password);
+            DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_UpdatePassword @username , @newPassword", new object[] { username, hashedPassword });
         }
 
         public void ChangeDisplayName(string username, string newDisplayName) 
@@ -119,6 +114,21 @@ namespace RestaurantIS.DAO
         public bool ResetPassword(string username)
         {
             return DataProvider.InstanceOfDataProvider.ExecuteNonQuery("UPDATE Account SET password = '1962026656160185351301320480154111117132155' WHERE username = '" + username + "'") > 0;
+        }
+
+        private string GetHash(string item)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(item);
+            byte[] hashData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hashedItem = "";
+
+            foreach (byte data in hashData)
+            {
+                hashedItem += data;
+            }
+
+            return hashedItem;
         }
     }
 }

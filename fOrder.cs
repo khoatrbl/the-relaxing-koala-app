@@ -1,4 +1,4 @@
-﻿using RestaurantIS.DAO;
+﻿    using RestaurantIS.DAO;
 using RestaurantIS.DTO;
 using RestaurantIS.Properties;
 using System;
@@ -55,7 +55,7 @@ namespace RestaurantIS
         {
             flpMenuItem.Controls.Clear();
 
-            List<MenuItem> listOfMenuItems = MenuItemDAO.Instance.getListOfMenuItems();
+            List<MenuItem> listOfMenuItems = MenuItemDAO.Instance.GetListOfMenuItems();
 
             foreach (MenuItem menuItem in listOfMenuItems)
             {
@@ -75,6 +75,10 @@ namespace RestaurantIS
                         menuItemLayout.ItemImage = Resources.cappuccino; break;
                     case "espresso":
                         menuItemLayout.ItemImage = Resources.espresso_3; break;
+                    case "coke":
+                        menuItemLayout.ItemImage = Resources.coke; break;
+                    default:
+                        menuItemLayout.ItemImage = Resources.RK_placeholder; break;
                 }
 
                 flpMenuItem.Controls.Add(menuItemLayout);
@@ -84,7 +88,7 @@ namespace RestaurantIS
         private void LoadMenuItemsByCategory(int categoryID)
         {
             flpMenuItem.Controls.Clear();
-            List<MenuItem> menuItemList = MenuItemDAO.Instance.getListOfMenuItemByCategoryID(categoryID);
+            List<MenuItem> menuItemList = MenuItemDAO.Instance.GetListOfMenuItemByCategoryID(categoryID);
             foreach (MenuItem item in menuItemList)
             {
                 ucMenuItemLayout menuItemLayout = new ucMenuItemLayout() { ItemId = item.Id, ItemName = item.Name, ItemPrice = "$" + item.Price.ToString() };
@@ -103,6 +107,10 @@ namespace RestaurantIS
                         menuItemLayout.ItemImage = Resources.cappuccino; break;
                     case "espresso":
                         menuItemLayout.ItemImage = Resources.espresso_3; break;
+                    case "coke":
+                        menuItemLayout.ItemImage = Resources.coke; break;
+                    default:
+                        menuItemLayout.ItemImage = Resources.RK_placeholder; break;
                 }
 
                 flpMenuItem.Controls.Add(menuItemLayout);

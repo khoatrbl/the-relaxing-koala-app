@@ -38,14 +38,16 @@
             dtgvInvoice = new DataGridView();
             tpMenu = new TabPage();
             panel9 = new Panel();
-            cbItemCategory = new TextBox();
             label1 = new Label();
             panel6 = new Panel();
+            panel22 = new Panel();
+            txbKeywords = new TextBox();
+            label7 = new Label();
             panel11 = new Panel();
             numericMenuItemPrice = new NumericUpDown();
             menuItemPriceLabel = new Label();
             panel10 = new Panel();
-            comboBox1 = new ComboBox();
+            cbItemCategory = new ComboBox();
             menuItemCategoryLabel = new Label();
             panel8 = new Panel();
             txbItemName = new TextBox();
@@ -122,6 +124,7 @@
             tpMenu.SuspendLayout();
             panel9.SuspendLayout();
             panel6.SuspendLayout();
+            panel22.SuspendLayout();
             panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericMenuItemPrice).BeginInit();
             panel10.SuspendLayout();
@@ -249,22 +252,12 @@
             // panel9
             // 
             panel9.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel9.Controls.Add(cbItemCategory);
             panel9.Controls.Add(label1);
             panel9.Location = new Point(553, 223);
             panel9.Margin = new Padding(3, 4, 3, 4);
             panel9.Name = "panel9";
             panel9.Size = new Size(0, 59);
             panel9.TabIndex = 3;
-            // 
-            // cbItemCategory
-            // 
-            cbItemCategory.Location = new Point(120, 16);
-            cbItemCategory.Margin = new Padding(3, 4, 3, 4);
-            cbItemCategory.Name = "cbItemCategory";
-            cbItemCategory.ReadOnly = true;
-            cbItemCategory.Size = new Size(275, 27);
-            cbItemCategory.TabIndex = 1;
             // 
             // label1
             // 
@@ -280,6 +273,7 @@
             // panel6
             // 
             panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(panel22);
             panel6.Controls.Add(panel11);
             panel6.Controls.Add(panel10);
             panel6.Controls.Add(panel8);
@@ -289,12 +283,42 @@
             panel6.Size = new Size(412, 475);
             panel6.TabIndex = 3;
             // 
+            // panel22
+            // 
+            panel22.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel22.Controls.Add(txbKeywords);
+            panel22.Controls.Add(label7);
+            panel22.Location = new Point(0, 214);
+            panel22.Margin = new Padding(3, 4, 3, 4);
+            panel22.Name = "panel22";
+            panel22.Size = new Size(407, 59);
+            panel22.TabIndex = 3;
+            // 
+            // txbKeywords
+            // 
+            txbKeywords.Location = new Point(120, 16);
+            txbKeywords.Margin = new Padding(3, 4, 3, 4);
+            txbKeywords.Name = "txbKeywords";
+            txbKeywords.Size = new Size(275, 27);
+            txbKeywords.TabIndex = 1;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(3, 16);
+            label7.Name = "label7";
+            label7.Size = new Size(109, 28);
+            label7.TabIndex = 0;
+            label7.Text = "Keywords:";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // panel11
             // 
             panel11.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel11.Controls.Add(numericMenuItemPrice);
             panel11.Controls.Add(menuItemPriceLabel);
-            panel11.Location = new Point(0, 205);
+            panel11.Location = new Point(0, 297);
             panel11.Margin = new Padding(3, 4, 3, 4);
             panel11.Name = "panel11";
             panel11.Size = new Size(407, 59);
@@ -302,6 +326,7 @@
             // 
             // numericMenuItemPrice
             // 
+            numericMenuItemPrice.DecimalPlaces = 2;
             numericMenuItemPrice.Location = new Point(121, 18);
             numericMenuItemPrice.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
             numericMenuItemPrice.Name = "numericMenuItemPrice";
@@ -322,7 +347,7 @@
             // panel10
             // 
             panel10.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel10.Controls.Add(comboBox1);
+            panel10.Controls.Add(cbItemCategory);
             panel10.Controls.Add(menuItemCategoryLabel);
             panel10.Location = new Point(0, 138);
             panel10.Margin = new Padding(3, 4, 3, 4);
@@ -330,13 +355,13 @@
             panel10.Size = new Size(407, 59);
             panel10.TabIndex = 3;
             // 
-            // comboBox1
+            // cbItemCategory
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(121, 16);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(275, 28);
-            comboBox1.TabIndex = 1;
+            cbItemCategory.FormattingEnabled = true;
+            cbItemCategory.Location = new Point(121, 16);
+            cbItemCategory.Name = "cbItemCategory";
+            cbItemCategory.Size = new Size(275, 28);
+            cbItemCategory.TabIndex = 1;
             // 
             // menuItemCategoryLabel
             // 
@@ -398,6 +423,7 @@
             txbItemID.ReadOnly = true;
             txbItemID.Size = new Size(275, 27);
             txbItemID.TabIndex = 1;
+            txbItemID.TextChanged += txbItemID_TextChanged;
             // 
             // itemIdLabel
             // 
@@ -446,6 +472,7 @@
             // 
             // dtgvMenu
             // 
+            dtgvMenu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvMenu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvMenu.Location = new Point(4, 0);
             dtgvMenu.Name = "dtgvMenu";
@@ -473,6 +500,7 @@
             viewMenuItemBtn.TabIndex = 3;
             viewMenuItemBtn.Text = "View";
             viewMenuItemBtn.UseVisualStyleBackColor = true;
+            viewMenuItemBtn.Click += viewMenuItemBtn_Click;
             // 
             // updateMenuItemBtn
             // 
@@ -482,6 +510,7 @@
             updateMenuItemBtn.TabIndex = 2;
             updateMenuItemBtn.Text = "Update";
             updateMenuItemBtn.UseVisualStyleBackColor = true;
+            updateMenuItemBtn.Click += updateMenuItemBtn_Click;
             // 
             // deleteMenuItemBtn
             // 
@@ -491,6 +520,7 @@
             deleteMenuItemBtn.TabIndex = 1;
             deleteMenuItemBtn.Text = "Delete";
             deleteMenuItemBtn.UseVisualStyleBackColor = true;
+            deleteMenuItemBtn.Click += deleteMenuItemBtn_Click;
             // 
             // addMenuItemBtn
             // 
@@ -500,6 +530,7 @@
             addMenuItemBtn.TabIndex = 0;
             addMenuItemBtn.Text = "Add";
             addMenuItemBtn.UseVisualStyleBackColor = true;
+            addMenuItemBtn.Click += addMenuItemBtn_Click;
             // 
             // tpCategory
             // 
@@ -533,6 +564,7 @@
             categoryViewBtn.TabIndex = 3;
             categoryViewBtn.Text = "View";
             categoryViewBtn.UseVisualStyleBackColor = true;
+            categoryViewBtn.Click += categoryViewBtn_Click;
             // 
             // categoryUpdateBtn
             // 
@@ -542,9 +574,11 @@
             categoryUpdateBtn.TabIndex = 2;
             categoryUpdateBtn.Text = "Update";
             categoryUpdateBtn.UseVisualStyleBackColor = true;
+            categoryUpdateBtn.Click += categoryUpdateBtn_Click;
             // 
             // categoryDeleteBtn
             // 
+            categoryDeleteBtn.Enabled = false;
             categoryDeleteBtn.Location = new Point(138, 2);
             categoryDeleteBtn.Name = "categoryDeleteBtn";
             categoryDeleteBtn.Size = new Size(127, 70);
@@ -560,9 +594,11 @@
             categoryAddBtn.TabIndex = 0;
             categoryAddBtn.Text = "Add";
             categoryAddBtn.UseVisualStyleBackColor = true;
+            categoryAddBtn.Click += categoryAddBtn_Click;
             // 
             // dtgvCategory
             // 
+            dtgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCategory.Location = new Point(3, 85);
             dtgvCategory.Name = "dtgvCategory";
@@ -674,6 +710,7 @@
             tableViewBtn.TabIndex = 3;
             tableViewBtn.Text = "View";
             tableViewBtn.UseVisualStyleBackColor = true;
+            tableViewBtn.Click += tableViewBtn_Click;
             // 
             // tableUpdateBtn
             // 
@@ -683,9 +720,11 @@
             tableUpdateBtn.TabIndex = 2;
             tableUpdateBtn.Text = "Update";
             tableUpdateBtn.UseVisualStyleBackColor = true;
+            tableUpdateBtn.Click += tableUpdateBtn_Click;
             // 
             // tableDeleteBtn
             // 
+            tableDeleteBtn.Enabled = false;
             tableDeleteBtn.Location = new Point(138, 2);
             tableDeleteBtn.Name = "tableDeleteBtn";
             tableDeleteBtn.Size = new Size(127, 70);
@@ -701,6 +740,7 @@
             tableAddBtn.TabIndex = 0;
             tableAddBtn.Text = "Add";
             tableAddBtn.UseVisualStyleBackColor = true;
+            tableAddBtn.Click += tableAddBtn_Click;
             // 
             // dtgvTableList
             // 
@@ -802,6 +842,7 @@
             txbTableID.ReadOnly = true;
             txbTableID.Size = new Size(275, 27);
             txbTableID.TabIndex = 1;
+            txbTableID.TextChanged += txbTableID_TextChanged;
             // 
             // label3
             // 
@@ -938,6 +979,7 @@
             accountViewBtn.TabIndex = 3;
             accountViewBtn.Text = "View";
             accountViewBtn.UseVisualStyleBackColor = true;
+            accountViewBtn.Click += accountViewBtn_Click;
             // 
             // accountUpdateBtn
             // 
@@ -1027,6 +1069,8 @@
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
             panel6.ResumeLayout(false);
+            panel22.ResumeLayout(false);
+            panel22.PerformLayout();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericMenuItemPrice).EndInit();
@@ -1106,13 +1150,11 @@
         private TextBox txbItemID;
         private Label itemIdLabel;
         private Panel panel9;
-        private TextBox cbItemCategory;
         private Label label1;
         private Panel panel11;
         private NumericUpDown numericMenuItemPrice;
         private Label menuItemPriceLabel;
         private Panel panel10;
-        private ComboBox comboBox1;
         private Label menuItemCategoryLabel;
         private Panel panel12;
         private Button categoryViewBtn;
@@ -1161,5 +1203,12 @@
         private DateTimePicker dtpkToDate;
         private ToolStripMenuItem tableManagementToolStripMenuItem;
         private ToolStripMenuItem changeDisplayNameToolStripMenuItem;
+        private Panel panel22;
+        private TextBox txbKeywords;
+        private Label label7;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn id;
+        private ComboBox cbItemCategory;
     }
 }
