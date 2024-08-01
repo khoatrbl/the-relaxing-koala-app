@@ -49,6 +49,9 @@ CREATE TABLE MenuItems
 )
 GO
 
+ALTER TABLE MenuItems ADD keyword NVARCHAR(100) NOT NULL
+GO
+
 CREATE TABLE Invoice
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -58,6 +61,9 @@ CREATE TABLE Invoice
 	FOREIGN KEY (idTable) REFERENCES TableList(id)
 )
 GO
+
+ALTER TABLE Invoice 
+ADD dateCheckin DATETIME NOT NULL DEFAULT GETDATE(), dateCheckOut DATETIME NOT NULL,  totalPrice FLOAT
 
 CREATE TABLE InvoiceItems
 (
@@ -222,7 +228,7 @@ BEGIN
 		UPDATE TableList SET stats = N'Vacant' WHERE id = @idTable
 END
 GO
-ALTER TRIGGER UTG_DeleteInvoiceItems
+CREATE TRIGGER UTG_DeleteInvoiceItems
 ON InvoiceItems FOR DELETE
 AS
 BEGIN
@@ -242,7 +248,7 @@ BEGIN
 	END
 END
 GO
-ALTER TRIGGER UTG_InsertReservation
+CREATE TRIGGER UTG_InsertReservation
 ON Reservations AFTER INSERT
 AS
 BEGIN
@@ -257,8 +263,7 @@ BEGIN
 	UPDATE TableList SET stats = N'Reserved' FROM TableList as t, Reservations as r WHERE t.id = @idTable AND r.idTable = t.id AND CAST(r.date AS DATE) = @currentDate
 END
 GO
-
-ALTER TRIGGER UTG_DeleteReservation
+CREATE TRIGGER UTG_DeleteReservation
 ON Reservations FOR DELETE
 AS
 BEGIN
