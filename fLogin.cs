@@ -14,6 +14,14 @@ namespace RestaurantIS
             InitializeComponent();
         }
 
+        #region Methods
+        private bool LogIn(string username, string password)
+        {
+            return AccountDAO.InstanceOfAccountDAO.Login(username, password);
+        }
+        #endregion
+
+        #region Events
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Do you want to quit the application?", "Warning", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
@@ -29,11 +37,6 @@ namespace RestaurantIS
             fTableManager.ShowDialog();
             this.Show();
 
-        }
-
-        private bool LogIn(string username, string password)
-        {
-            return AccountDAO.InstanceOfAccountDAO.Login(username, password);
         }
 
         private void managerLoginBtn_Click(object sender, EventArgs e)
@@ -54,5 +57,6 @@ namespace RestaurantIS
             }
             
         }
+        #endregion
     }
 }

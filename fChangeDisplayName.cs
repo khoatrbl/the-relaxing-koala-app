@@ -23,12 +23,7 @@ namespace RestaurantIS
             InitializeComponent();
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            ChangeDisplayName();
-            this.Close();
-        }
-
+        #region Methods
         private void ChangeDisplayName()
         {
             string newName = txbChangeDisplayName.Text;
@@ -37,9 +32,19 @@ namespace RestaurantIS
 
         }
 
+        #endregion
+
+        #region Events
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            ChangeDisplayName();
+            this.Close();
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }

@@ -10,7 +10,7 @@ namespace RestaurantIS.DAO
 {
     public class MenuItemDAO
     {
-        private static MenuItemDAO instance;
+        private static MenuItemDAO? instance;
 
         public static MenuItemDAO Instance
         {
@@ -20,6 +20,7 @@ namespace RestaurantIS.DAO
 
         private MenuItemDAO() { }
 
+        // Returns a list of menu item by category
         public List<MenuItem> GetListOfMenuItemByCategoryID(int categoryID)
         {
             List<MenuItem> listOfMenuItemsByCategory = new List<MenuItem>();
@@ -35,6 +36,7 @@ namespace RestaurantIS.DAO
             return listOfMenuItemsByCategory;
         }
 
+        // Returns a list of all the menu items
         public List<MenuItem> GetListOfMenuItems()
         {
             List<MenuItem> listOfMenuItems = new List<MenuItem>();
@@ -50,11 +52,13 @@ namespace RestaurantIS.DAO
             return listOfMenuItems;
         }
 
+        // Returns a list of all the menu items, but in different names for display purpose
         public DataTable GetListOfMenuItemsWithAlternativeColumnNames()
         {
             return DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_GetListOfMenuItems");
         }
 
+        // This method inserts a new menu item into the database
         public bool InsertMenuItem(string name, int categoryId, float price, string keyword)
         {
             string query = string.Format("INSERT MenuItems (name, idCategory, price, keyword) VALUES (N'{0}', {1}, {2}, N'{3}')", name, categoryId, price, keyword);
@@ -62,12 +66,14 @@ namespace RestaurantIS.DAO
             return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
         }
 
+        // This method update an existing menu item
         public bool UpdateMenuItem(int id, string name, int categoryId, float price, string keyword)
         {
             string query = String.Format("UPDATE MenuItems SET name = N'{0}', idCategory = {1}, price = {2}, keyword = N'{3}' WHERE id = {4}", name, categoryId, price, keyword, id);
             return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
         }
 
+        // this method deletes an existing item in the database
         public bool DeleteMenuItem(int menuItemId) 
         {
             OrderItemDAO.Instance.DeleteOrderItemByItemID(menuItemId);

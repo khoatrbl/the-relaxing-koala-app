@@ -29,6 +29,8 @@ namespace RestaurantIS.DAO
         }
 
         private DataProvider() { }
+        
+        // Methods to help execute SQL Queries
         public DataTable ExecuteQuery(string query, object[] param = null)
         {
             DataTable data = new DataTable();

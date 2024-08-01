@@ -29,6 +29,7 @@ namespace RestaurantIS
 
         }
 
+        #region Methods
         private void InitializeViews()
         {
             dtgvMenu.DataSource = menuItemList;
@@ -59,16 +60,12 @@ namespace RestaurantIS
             Account updatedAccount = AccountDAO.InstanceOfAccountDAO.GetAccountByUsername(Account.UserName);
             this.Account = updatedAccount;
         }
+
         private void LoadDateTimePickerInvoice()
         {
             DateTime today = DateTime.Now;
             dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
             dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
-        }
-
-        private void showInvoiceBtn_Click(object sender, EventArgs e)
-        {
-            LoadListOfInvoicesByDate(dtpkFromDate.Value, dtpkToDate.Value);
         }
 
         private void LoadListOfInvoicesByDate(DateTime checkIn, DateTime checkOut)
@@ -131,41 +128,6 @@ namespace RestaurantIS
             txbTableName.DataBindings.Add(new Binding("Text", dtgvTableList.DataSource, "name", true, DataSourceUpdateMode.Never));
         }
 
-        private void tableManagementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fTableManager fTableManager = new fTableManager();
-
-            fTableManager.ShowDialog();
-            this.Show();
-        }
-
-        private void changeCredentialsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fUpdateAccount fUpdateAccount = new fUpdateAccount(Account.UserName);
-            this.Hide();
-            fUpdateAccount.ShowDialog();
-            this.Show();
-        }
-
-        private void changeDisplayNameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fChangeDisplayName fChangeDisplayName = new fChangeDisplayName(Account.UserName);
-            this.Hide();
-            fChangeDisplayName.ShowDialog();
-            UpdateAccountInstance();
-            LoadAccountDisplayName();
-            this.Show();
-
-        }
-
-        private void accountAddBtn_Click(object sender, EventArgs e)
-        {
-            string username = txbUsername.Text;
-            string displayName = txbDisplayName.Text;
-
-            addAccount(username, displayName);
-        }
-
         private void addAccount(string username, string displayName)
         {
             if (username != "")
@@ -189,12 +151,6 @@ namespace RestaurantIS
 
         }
 
-        private void accountDeleteBtn_Click(object sender, EventArgs e)
-        {
-            string username = txbUsername.Text;
-            deleteAccount(username);
-        }
-
         private void deleteAccount(string username)
         {
 
@@ -209,21 +165,6 @@ namespace RestaurantIS
             {
                 MessageBox.Show("Username does not exist!");
             }
-        }
-
-        private void resetPwdBtn_Click(object sender, EventArgs e)
-        {
-            string username = txbUsername.Text;
-            ResetPassword(username);
-        }
-
-        private void accountUpdateBtn_Click(object sender, EventArgs e)
-        {
-            string username = txbUsername.Text;
-            string displayName = txbDisplayName.Text;
-
-            UpdateAccount(username, displayName);
-            LoadListOfAccounts();
         }
 
         private void UpdateAccount(string username, string displayName)
@@ -265,6 +206,105 @@ namespace RestaurantIS
                 MessageBox.Show("Username does not exist.");
                 return false;
             }
+        }
+
+        private bool AddMenuItem(string name, int categoryId, float price, string keyword)
+        {
+            return MenuItemDAO.Instance.InsertMenuItem(name, categoryId, price, keyword);
+        }
+
+        private bool UpdateMenuItem(int id, string name, int categoryId, float price, string keyword)
+        {
+            return MenuItemDAO.Instance.UpdateMenuItem(id, name, categoryId, price, keyword);
+        }
+
+        private bool DeleteMenuItem(int id)
+        {
+            return MenuItemDAO.Instance.DeleteMenuItem(id);
+        }
+
+        private bool AddCategory(string name)
+        {
+            return CategoryDAO.Instance.AddCategory(name);
+        }
+
+        private bool UpdateCategory(int id, string name)
+        {
+            return CategoryDAO.Instance.UpdateCategory(id, name);
+        }
+
+        private bool AddTable(string name, string status)
+        {
+            return TableDAO.Instance.AddTable(name, status);
+        }
+
+        private bool UpdateTable(int id, string name, string status)
+        {
+            return TableDAO.Instance.UpdateTable(id, name, status);
+        }
+
+        #endregion
+
+        #region Events
+        private void showInvoiceBtn_Click(object sender, EventArgs e)
+        {
+            LoadListOfInvoicesByDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+
+        private void tableManagementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fTableManager fTableManager = new fTableManager();
+
+            fTableManager.ShowDialog();
+            this.Show();
+        }
+
+        private void changeCredentialsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fUpdateAccount fUpdateAccount = new fUpdateAccount(Account.UserName);
+            this.Hide();
+            fUpdateAccount.ShowDialog();
+            this.Show();
+        }
+
+        private void changeDisplayNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fChangeDisplayName fChangeDisplayName = new fChangeDisplayName(Account.UserName);
+            this.Hide();
+            fChangeDisplayName.ShowDialog();
+            UpdateAccountInstance();
+            LoadAccountDisplayName();
+            this.Show();
+
+        }
+
+        private void accountAddBtn_Click(object sender, EventArgs e)
+        {
+            string username = txbUsername.Text;
+            string displayName = txbDisplayName.Text;
+
+            addAccount(username, displayName);
+        }
+
+        private void accountDeleteBtn_Click(object sender, EventArgs e)
+        {
+            string username = txbUsername.Text;
+            deleteAccount(username);
+        }
+
+        private void resetPwdBtn_Click(object sender, EventArgs e)
+        {
+            string username = txbUsername.Text;
+            ResetPassword(username);
+        }
+
+        private void accountUpdateBtn_Click(object sender, EventArgs e)
+        {
+            string username = txbUsername.Text;
+            string displayName = txbDisplayName.Text;
+
+            UpdateAccount(username, displayName);
+            LoadListOfAccounts();
         }
 
         private void viewMenuItemBtn_Click(object sender, EventArgs e)
@@ -329,16 +369,6 @@ namespace RestaurantIS
 
         }
 
-        private bool AddMenuItem(string name, int categoryId, float price, string keyword)
-        {
-            return MenuItemDAO.Instance.InsertMenuItem(name, categoryId, price, keyword);
-        }
-
-        private bool UpdateMenuItem(int id, string name, int categoryId, float price, string keyword)
-        {
-            return MenuItemDAO.Instance.UpdateMenuItem(id, name, categoryId, price, keyword);
-        }
-
         private void updateMenuItemBtn_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbItemID.Text);
@@ -374,11 +404,6 @@ namespace RestaurantIS
             }
         }
 
-        private bool DeleteMenuItem(int id)
-        {
-            return MenuItemDAO.Instance.DeleteMenuItem(id);
-        }
-
         private void categoryAddBtn_Click(object sender, EventArgs e)
         {
             string name = txbCategoryName.Text;
@@ -392,11 +417,6 @@ namespace RestaurantIS
             {
                 MessageBox.Show("Failed to add category.");
             }
-        }
-
-        private bool AddCategory(string name)
-        {
-            return CategoryDAO.Instance.AddCategory(name);
         }
 
         private void categoryUpdateBtn_Click(object sender, EventArgs e)
@@ -413,11 +433,6 @@ namespace RestaurantIS
             {
                 MessageBox.Show("Failed to update category");
             }
-        }
-
-        private bool UpdateCategory(int id, string name)
-        {
-            return CategoryDAO.Instance.UpdateCategory(id, name);
         }
 
         private void categoryViewBtn_Click(object sender, EventArgs e)
@@ -471,11 +486,6 @@ namespace RestaurantIS
             }
         }
 
-        private bool AddTable(string name, string status)
-        {
-            return TableDAO.Instance.AddTable(name, status);
-        }
-
         private void tableUpdateBtn_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txbTableID.Text);
@@ -494,9 +504,6 @@ namespace RestaurantIS
 
         }
 
-        private bool UpdateTable(int id, string name, string status) 
-        { 
-            return TableDAO.Instance.UpdateTable(id, name, status);
-        }
+        #endregion
     }
 }

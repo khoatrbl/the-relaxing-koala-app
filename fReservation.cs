@@ -23,6 +23,15 @@ namespace RestaurantIS
 
         public int TableId { get => tableId; set => tableId = value; }
 
+        #region Methods
+        private bool ReserveTableById(int tableId, string name, string phone, string date, string time, int seats, string email)
+        {
+            return ReservationDAO.Instance.ReserveTableById(tableId, name, phone, date, time, seats, email);
+        }
+
+        #endregion
+
+        #region Events
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,11 +93,9 @@ namespace RestaurantIS
 
 
         }
+        #endregion
 
-        private bool ReserveTableById(int tableId, string name, string phone, string date, string time, int seats, string email)
-        {
-            return ReservationDAO.Instance.ReserveTableById(tableId, name, phone, date, time, seats, email);
-        }
+
 
 
     }

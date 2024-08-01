@@ -25,6 +25,7 @@ namespace RestaurantIS
 
         }
 
+        #region Methods
         private void UpdateAccount()
         {
             string oldPassword = txbOldPassword.Text;
@@ -64,9 +65,14 @@ namespace RestaurantIS
             }
         }
 
+        #endregion
+
+        #region Events
         private void confirmBtn_Click(object sender, EventArgs e)
         {
             UpdateAccount();
         }
+
+        #endregion
     }
 }

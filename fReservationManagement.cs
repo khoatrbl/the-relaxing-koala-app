@@ -25,6 +25,8 @@ namespace RestaurantIS
             LoadTimePicker();
         }
 
+        #region Methods
+
         private void LoadListOfReservation()
         {
             ClearBindings();
@@ -89,6 +91,10 @@ namespace RestaurantIS
             return ReservationDAO.Instance.DeleteReservation(id);
         }
 
+        #endregion
+
+        #region Events
+
         private void btnView_Click(object sender, EventArgs e)
         {
             LoadListOfReservation();
@@ -148,6 +154,8 @@ namespace RestaurantIS
                 dtpkReservationDate.Value = DateTime.Now;
             }
         }
+
+        #endregion
 
     }
 }

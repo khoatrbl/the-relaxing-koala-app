@@ -31,6 +31,7 @@ namespace RestaurantIS
         public float TotalPrice { get => totalPrice; set => totalPrice = value; }
         public int InvoiceID { get => invoiceID; set => invoiceID = value; }
 
+        #region Methods
         public void LoadTotalPrice()
         {
             txbTotalAmoutDisplay.Text = totalPrice.ToString("c");
@@ -67,6 +68,9 @@ namespace RestaurantIS
             }
         }
 
+        #endregion
+
+        #region Events
         private void PaymentMethodLayout_Click(object? sender, EventArgs e)
         {
             PaymentMethod paymentMethod;
@@ -123,6 +127,8 @@ namespace RestaurantIS
                 MessageBox.Show("Transaction failed!");
             }
         }
+
+        #endregion
     }
 
 

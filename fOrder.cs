@@ -27,6 +27,7 @@ namespace RestaurantIS
             LoadMenuItems();
         }
 
+        #region Methods
         private void LoadCategory()
         {
             List<Category> categoryList = CategoryDAO.Instance.LoadCategory();
@@ -44,11 +45,6 @@ namespace RestaurantIS
 
                 flpCategory.Controls.Add(btn);
             }
-        }
-
-        private void ShowAllMenuItemsButton_Click(object? sender, EventArgs e)
-        {
-            LoadMenuItems();
         }
 
         private void LoadMenuItems()
@@ -118,6 +114,17 @@ namespace RestaurantIS
 
         }
 
+
+        #endregion
+
+        #region Events
+        private void ShowAllMenuItemsButton_Click(object? sender, EventArgs e)
+        {
+            LoadMenuItems();
+        }
+
+        
+
         private void btn_Click(object? sender, EventArgs e)
         {
             int categoryID = ((sender as Button).Tag as Category).CategoryID;
@@ -157,5 +164,6 @@ namespace RestaurantIS
         {
             this.Close();
         }
+        #endregion
     }
 }

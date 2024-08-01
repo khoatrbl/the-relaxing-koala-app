@@ -23,10 +23,7 @@ namespace RestaurantIS
             LoadTable();
         }
 
-        private void loginAsManagerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #region Methods
 
         private void LoadTable()
         {
@@ -57,6 +54,37 @@ namespace RestaurantIS
 
             }
         }
+
+        private void ShowOrderByTable(int tableID)
+        {
+            listViewOrderList.Items.Clear();
+
+            float totalPriceOfOrder = 0;
+            totalPriceTxb.Text = totalPriceOfOrder.ToString();
+
+            CultureInfo culture = new CultureInfo("en-US"); // setting the culture to ensure currency is formatted correctly
+
+            List<OrderItem> listOfOrderItems = OrderItemDAO.Instance.getListOfOrderItemsByTableID(tableID);
+
+            foreach (OrderItem item in listOfOrderItems)
+            {
+                ListViewItem listViewItem = new ListViewItem(item.Item.ToString());
+                listViewItem.SubItems.Add(item.Quantity.ToString());
+                listViewItem.SubItems.Add(item.Price.ToString("c", culture));
+                listViewItem.SubItems.Add(item.Total.ToString("c", culture));
+
+                totalPriceOfOrder += item.Total;
+                currentTable.TotalOrderPrice = totalPriceOfOrder;
+                totalPriceTxb.Text = totalPriceOfOrder.ToString("c", culture); // "c": short for currency, used to format the total price
+
+                listViewOrderList.Items.Add(listViewItem);
+            }
+
+        }
+
+        #endregion
+
+        #region Events
 
         private void btn_Click(object? sender, EventArgs e)
         {
@@ -104,33 +132,6 @@ namespace RestaurantIS
             lastButton = (Button)currentBtn;
 
             ShowOrderByTable(tableID);
-        }
-
-        private void ShowOrderByTable(int tableID)
-        {
-            listViewOrderList.Items.Clear();
-
-            float totalPriceOfOrder = 0;
-            totalPriceTxb.Text = totalPriceOfOrder.ToString();
-
-            CultureInfo culture = new CultureInfo("en-US"); // setting the culture to ensure currency is formatted correctly
-
-            List<OrderItem> listOfOrderItems = OrderItemDAO.Instance.getListOfOrderItemsByTableID(tableID);
-
-            foreach (OrderItem item in listOfOrderItems)
-            {
-                ListViewItem listViewItem = new ListViewItem(item.Item.ToString());
-                listViewItem.SubItems.Add(item.Quantity.ToString());
-                listViewItem.SubItems.Add(item.Price.ToString("c", culture));
-                listViewItem.SubItems.Add(item.Total.ToString("c", culture));
-
-                totalPriceOfOrder += item.Total;
-                currentTable.TotalOrderPrice = totalPriceOfOrder;
-                totalPriceTxb.Text = totalPriceOfOrder.ToString("c", culture); // "c": short for currency, used to format the total price
-
-                listViewOrderList.Items.Add(listViewItem);
-            }
-
         }
 
         private void OrderBtn_Click(object? sender, EventArgs e)
@@ -204,5 +205,11 @@ namespace RestaurantIS
             fReservationManagement fReservationManagement = new fReservationManagement();
             fReservationManagement.Show();
         }
+
+        private void loginAsManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

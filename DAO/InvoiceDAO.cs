@@ -21,12 +21,9 @@ namespace RestaurantIS.DAO
 
         private InvoiceDAO() { }
 
-        /// <summary>
-        /// Successful: Invoice ID
-        /// Unsuccessful: -1
-        /// </summary>
-        /// <param name="tableID"></param>
-        /// <returns></returns>
+        // This method returns the invoice id that associated with a table
+        // Successful (there is an invoice with that table): returns the invoice id
+        // Unsuccessful (there is no invoice with that table): returns -1
         public int GetUnpaidInvoiceIDByTableID(int tableID)
         {
             DataTable data = DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_GetInvoice @idTable , @stats", new object[] {tableID, 0});
@@ -39,11 +36,13 @@ namespace RestaurantIS.DAO
             return -1;
         }
 
+        // This methods add an invoice into the database
         public void AddInvoice(int tableID)
         {
             DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_InsertInvoice @idTable", new object[] {tableID});
         }
 
+        // This method returns the largest id in the Invoice table in the database
         public int GetMaxInvoiceID()
         {
             try
@@ -54,11 +53,13 @@ namespace RestaurantIS.DAO
             
         }
 
+        // This method returns a list of invoice within a specific time range
         public DataTable GetListOfInvoicesByDate(DateTime checkIn, DateTime checkOut)
         {
             return DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_GetListOfInvoiceByDate @dateCheckIn , @dateCheckOut", new object[] { checkIn, checkOut });
         }
 
+        // This method handles making payment
         public void MakePayment(int invoiceID, float totalPrice)
         {
             string query = "UPDATE Invoice SET dateCheckOut = GETDATE(), stats = 1, totalPrice = " + totalPrice +  "WHERE id = " + invoiceID;

@@ -23,6 +23,7 @@ namespace RestaurantIS.DAO
 
         private CategoryDAO() { }
 
+        // This method returns a list of the categories available in the database
         public List<Category> LoadCategory()
         {
             List<Category> categoryList = new List<Category>();
@@ -38,6 +39,7 @@ namespace RestaurantIS.DAO
             return categoryList;
         }
 
+        // This method returns a category object with a specified ID
         public Category GetCategoryByID(int id)
         {
             Category category = null;
@@ -53,12 +55,14 @@ namespace RestaurantIS.DAO
             return category;
         }
 
+        // This method adds a category into the database
         public bool AddCategory(string name)
         {
             string query = String.Format("INSERT MenuItemCategory (name) VALUES (N'{0}')", name);
             return DataProvider.InstanceOfDataProvider.ExecuteNonQuery(query) > 0;
         }
          
+        // this method updates a category into the database
         public bool UpdateCategory(int id, string name)
         {
             string query = String.Format("UPDATE MenuItemCategory SET name = N'{0}' WHERE id = {1}", name, id);
