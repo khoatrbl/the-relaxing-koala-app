@@ -12,6 +12,8 @@ namespace RestaurantIS.DAO
     public class DataProvider
     {
         private static DataProvider? instanceOfDataProvider; 
+
+        // insert your connection string here
         private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=TheRelaxingKoala;Integrated Security=True";
 
         public static DataProvider InstanceOfDataProvider 
