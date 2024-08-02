@@ -116,6 +116,8 @@
             changeCredentialsToolStripMenuItem = new ToolStripMenuItem();
             changeDisplayNameToolStripMenuItem = new ToolStripMenuItem();
             tableManagementToolStripMenuItem = new ToolStripMenuItem();
+            tabPage1 = new TabPage();
+            dtgvReport = new DataGridView();
             tabControl.SuspendLayout();
             tpInvoice.SuspendLayout();
             panel2.SuspendLayout();
@@ -154,6 +156,8 @@
             ((System.ComponentModel.ISupportInitialize)dtgvAccount).BeginInit();
             panel27.SuspendLayout();
             menuStrip1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvReport).BeginInit();
             SuspendLayout();
             // 
             // tabControl
@@ -163,6 +167,7 @@
             tabControl.Controls.Add(tpCategory);
             tabControl.Controls.Add(tpTable);
             tabControl.Controls.Add(tpAccount);
+            tabControl.Controls.Add(tabPage1);
             tabControl.Location = new Point(12, 39);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
@@ -1049,6 +1054,29 @@
             tableManagementToolStripMenuItem.Text = "Table Management";
             tableManagementToolStripMenuItem.Click += tableManagementToolStripMenuItem_Click;
             // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(dtgvReport);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3);
+            tabPage1.Size = new Size(969, 560);
+            tabPage1.TabIndex = 5;
+            tabPage1.Text = "Report";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dtgvReport
+            // 
+            dtgvReport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgvReport.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvReport.Location = new Point(2, 0);
+            dtgvReport.Name = "dtgvReport";
+            dtgvReport.ReadOnly = true;
+            dtgvReport.RowHeadersWidth = 51;
+            dtgvReport.RowTemplate.Height = 29;
+            dtgvReport.Size = new Size(967, 560);
+            dtgvReport.TabIndex = 0;
+            // 
             // fManager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1113,6 +1141,8 @@
             panel27.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtgvReport).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1210,5 +1240,7 @@
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn id;
         private ComboBox cbItemCategory;
+        private TabPage tabPage1;
+        private DataGridView dtgvReport;
     }
 }

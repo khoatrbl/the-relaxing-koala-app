@@ -47,6 +47,7 @@ namespace RestaurantIS
             LoadListOfTables();
             LoadTableStatusIntoComboBox();
             AddTableBinding();
+            LoadReport();
         }
 
         private void LoadAccountDisplayName()
@@ -126,6 +127,11 @@ namespace RestaurantIS
         {
             txbTableID.DataBindings.Add(new Binding("Text", dtgvTableList.DataSource, "id", true, DataSourceUpdateMode.Never));
             txbTableName.DataBindings.Add(new Binding("Text", dtgvTableList.DataSource, "name", true, DataSourceUpdateMode.Never));
+        }
+
+        private void LoadReport()
+        {
+            dtgvReport.DataSource = ReportDAO.Instance.LoadReport();
         }
 
         private void addAccount(string username, string displayName)
@@ -242,6 +248,8 @@ namespace RestaurantIS
         {
             return TableDAO.Instance.UpdateTable(id, name, status);
         }
+
+        
 
         #endregion
 
@@ -496,7 +504,8 @@ namespace RestaurantIS
             {
                 MessageBox.Show("Table updated successfully");
                 LoadListOfTables();
-            } else
+            }
+            else
             {
                 MessageBox.Show("Failed to update table.");
             }
@@ -505,5 +514,6 @@ namespace RestaurantIS
         }
 
         #endregion
+
     }
 }
