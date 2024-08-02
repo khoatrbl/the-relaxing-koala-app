@@ -63,7 +63,7 @@ CREATE TABLE Invoice
 GO
 
 ALTER TABLE Invoice 
-ADD dateCheckin DATETIME NOT NULL DEFAULT GETDATE(), dateCheckOut DATETIME NOT NULL,  totalPrice FLOAT
+ADD dateCheckin DATETIME NOT NULL DEFAULT GETDATE(), dateCheckOut DATETIME,  totalPrice FLOAT
 
 CREATE TABLE InvoiceItems
 (
