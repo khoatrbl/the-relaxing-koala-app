@@ -353,6 +353,31 @@ BEGIN
 END
 GO
 
+-- Procedure to report on sale on each menu item
+CREATE PROC USP_ReportOnSale
+AS
+BEGIN
+	SELECT 
+		MI.id AS [Item ID],
+		MI.name AS [Item Name],
+		MIC.name AS [Category],
+		SUM(II.count) AS [Total Quantity Ordered],
+		MIN(I.dateCheckIn) AS [First Ordered Date],
+		MAX(I.dateCheckOut) AS [Last Ordered Date]
+	FROM 
+		Invoice I
+		INNER JOIN InvoiceItems II ON I.id = II.idInvoice
+		INNER JOIN MenuItems MI ON II.idMenuItem = MI.id
+		INNER JOIN MenuItemCategory MIC ON MI.idCategory = MIC.id
+	WHERE 
+		I.stats = 1
+	GROUP BY 
+		MI.id, MI.name, MIC.name
+	ORDER BY 
+		MI.name;
+END
+GO
+
 SELECT * FROM Account
 SELECT * FROM Invoice
 SELECT * FROM InvoiceItems
@@ -360,6 +385,9 @@ SELECT * FROM MenuItemCategory
 SELECT * FROM MenuItems
 SELECT * FROM TableList
 SELECT * FROM Reservations
+
+
+
 
 
 
