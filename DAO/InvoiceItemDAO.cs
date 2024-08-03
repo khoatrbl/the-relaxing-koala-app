@@ -21,7 +21,7 @@ namespace RestaurantIS.DAO
 
         private InvoiceItemDAO() { }
 
-        // This method adds a new invoice item into the database, with its associated invoice
+        // This method adds a new invoice item into the database, with its associated invoice.
         public void AddInvoiceItem(int invoiceID, int menuItemID, int count)
         {
             DataProvider.InstanceOfDataProvider.ExecuteQuery("USP_InsertInvoiceItem @idInvoice , @idMenuItem , @count", new object[] { invoiceID, menuItemID, count });
