@@ -378,6 +378,8 @@ BEGIN
 END
 GO
 
+INSERT INTO Account (username, displayName, password) VALUES (N'admin', N'admin', N'1962026656160185351301320480154111117132155') 
+
 SELECT * FROM Account
 SELECT * FROM Invoice
 SELECT * FROM InvoiceItems
@@ -385,8 +387,6 @@ SELECT * FROM MenuItemCategory
 SELECT * FROM MenuItems
 SELECT * FROM TableList
 SELECT * FROM Reservations
-
-
 
 
 

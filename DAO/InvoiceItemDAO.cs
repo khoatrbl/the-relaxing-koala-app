@@ -21,22 +21,6 @@ namespace RestaurantIS.DAO
 
         private InvoiceItemDAO() { }
 
-        // This method returns a list of invoice items (food that is orded) from the database
-        public List<InvoiceItem> GetListOfInvoiceItems(int invoiceID) 
-        { 
-            List<InvoiceItem> listOfInvoiceItems = new List<InvoiceItem>();
-
-            DataTable table = DataProvider.InstanceOfDataProvider.ExecuteQuery("SELECT * FROM InvoiceItems WHERE idInvoice = " + invoiceID);
-
-            foreach (DataRow row in table.Rows)
-            {
-                InvoiceItem invoiceItem = new InvoiceItem(row);
-                listOfInvoiceItems.Add(invoiceItem);
-            }
-
-            return listOfInvoiceItems;
-        }
-
         // This method adds a new invoice item into the database, with its associated invoice
         public void AddInvoiceItem(int invoiceID, int menuItemID, int count)
         {

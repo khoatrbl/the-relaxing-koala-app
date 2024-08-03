@@ -20,7 +20,7 @@ namespace RestaurantIS.DAO
 
         private OrderItemDAO() { }
 
-        public List<OrderItem> getListOfOrderItemsByTableID(int tableID)
+        public List<OrderItem> GetListOfOrderItemsByTableID(int tableID)
         {
             List<OrderItem> listOfOrderItems = new List<OrderItem>();
 

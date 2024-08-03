@@ -1,0 +1,326 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\the-relaxing-koala-app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dao\\orderitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dao\\orderitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dto\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dto\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dto\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dto\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dao\\invoiceitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dao\\invoiceitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\forder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:forder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\forder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:forder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\fmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:fmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\ftablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:ftablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dto\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dto\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\fpaymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:fpaymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\fpaymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:fpaymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\fchangedisplayname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:fchangedisplayname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\ftablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:ftablemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dto\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dto\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\dto\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:dto\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\strategies\\cashpaymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:strategies\\cashpaymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|e:\\the-relaxing-koala-app\\classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{2325EEB2-E449-4DB6-8590-EFD0748CD864}|RestaurantIS.csproj|solutionrelative:classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "fManager.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fManager.cs",
+              "RelativeDocumentMoniker": "fManager.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fManager.cs",
+              "RelativeToolTip": "fManager.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowC4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:46:21.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoiceItemDAO.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DAO\\InvoiceItemDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\InvoiceItemDAO.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DAO\\InvoiceItemDAO.cs",
+              "RelativeToolTip": "DAO\\InvoiceItemDAO.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAqwCoAAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:41:48.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InvoiceItem.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DTO\\InvoiceItem.cs",
+              "RelativeDocumentMoniker": "DTO\\InvoiceItem.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DTO\\InvoiceItem.cs",
+              "RelativeToolTip": "DTO\\InvoiceItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:36:35.321Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "fPaymentMethod.cs [Design]",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fPaymentMethod.cs",
+              "RelativeDocumentMoniker": "fPaymentMethod.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fPaymentMethod.cs [Design]",
+              "RelativeToolTip": "fPaymentMethod.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:26:53.762Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "fOrder.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fOrder.cs",
+              "RelativeDocumentMoniker": "fOrder.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fOrder.cs",
+              "RelativeToolTip": "fOrder.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAQwJAAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:14:35.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DTO\\MenuItem.cs",
+              "RelativeDocumentMoniker": "DTO\\MenuItem.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DTO\\MenuItem.cs",
+              "RelativeToolTip": "DTO\\MenuItem.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:13:27.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderItemDAO.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DAO\\OrderItemDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\OrderItemDAO.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DAO\\OrderItemDAO.cs",
+              "RelativeToolTip": "DAO\\OrderItemDAO.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwB8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:41:54.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DTO\\OrderItem.cs",
+              "RelativeDocumentMoniker": "DTO\\OrderItem.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DTO\\OrderItem.cs",
+              "RelativeToolTip": "DTO\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:24:05.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "fOrder.cs [Design]",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fOrder.cs",
+              "RelativeDocumentMoniker": "fOrder.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fOrder.cs [Design]",
+              "RelativeToolTip": "fOrder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T18:47:33.985Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "fChangeDisplayName.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fChangeDisplayName.cs",
+              "RelativeDocumentMoniker": "fChangeDisplayName.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fChangeDisplayName.cs",
+              "RelativeToolTip": "fChangeDisplayName.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:30:33.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "fTableManager.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fTableManager.cs",
+              "RelativeDocumentMoniker": "fTableManager.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fTableManager.cs",
+              "RelativeToolTip": "fTableManager.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAlwEMAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:13:03.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "fPaymentMethod.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fPaymentMethod.cs",
+              "RelativeDocumentMoniker": "fPaymentMethod.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fPaymentMethod.cs",
+              "RelativeToolTip": "fPaymentMethod.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAABUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:03:23.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccountDAO.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DAO\\AccountDAO.cs",
+              "RelativeDocumentMoniker": "DAO\\AccountDAO.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DAO\\AccountDAO.cs",
+              "RelativeToolTip": "DAO\\AccountDAO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:32:26.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "fTableManager.cs [Design]",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\fTableManager.cs",
+              "RelativeDocumentMoniker": "fTableManager.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\fTableManager.cs [Design]",
+              "RelativeToolTip": "fTableManager.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:13:00.194Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DTO\\Invoice.cs",
+              "RelativeDocumentMoniker": "DTO\\Invoice.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DTO\\Invoice.cs",
+              "RelativeToolTip": "DTO\\Invoice.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T17:08:40.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\DTO\\Payment.cs",
+              "RelativeDocumentMoniker": "DTO\\Payment.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\DTO\\Payment.cs",
+              "RelativeToolTip": "DTO\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T16:56:51.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CashPaymentMethod.cs",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\Strategies\\CashPaymentMethod.cs",
+              "RelativeDocumentMoniker": "Strategies\\CashPaymentMethod.cs",
+              "ToolTip": "E:\\the-relaxing-koala-app\\Strategies\\CashPaymentMethod.cs",
+              "RelativeToolTip": "Strategies\\CashPaymentMethod.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T16:08:19.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ClassDiagram.cd",
+              "DocumentMoniker": "E:\\the-relaxing-koala-app\\ClassDiagram.cd",
+              "RelativeDocumentMoniker": "ClassDiagram.cd",
+              "ToolTip": "E:\\the-relaxing-koala-app\\ClassDiagram.cd",
+              "RelativeToolTip": "ClassDiagram.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2024-08-02T16:02:24.617Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

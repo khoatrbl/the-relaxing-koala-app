@@ -17,6 +17,7 @@ namespace RestaurantIS
     {
         private Table currentTable;
         private Button lastButton = null;
+
         public fTableManager()
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace RestaurantIS
 
             CultureInfo culture = new CultureInfo("en-US"); // setting the culture to ensure currency is formatted correctly
 
-            List<OrderItem> listOfOrderItems = OrderItemDAO.Instance.getListOfOrderItemsByTableID(tableID);
+            List<OrderItem> listOfOrderItems = OrderItemDAO.Instance.GetListOfOrderItemsByTableID(tableID);
 
             foreach (OrderItem item in listOfOrderItems)
             {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\RestaurantInformationSystem\\RestaurantIS\\RestaurantIS.csproj": {}
+    "E:\\the-relaxing-koala-app\\RestaurantIS.csproj": {}
   },
   "projects": {
-    "D:\\RestaurantInformationSystem\\RestaurantIS\\RestaurantIS.csproj": {
+    "E:\\the-relaxing-koala-app\\RestaurantIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RestaurantInformationSystem\\RestaurantIS\\RestaurantIS.csproj",
+        "projectUniqueName": "E:\\the-relaxing-koala-app\\RestaurantIS.csproj",
         "projectName": "RestaurantIS",
-        "projectPath": "D:\\RestaurantInformationSystem\\RestaurantIS\\RestaurantIS.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "D:\\RestaurantInformationSystem\\RestaurantIS\\obj\\",
+        "projectPath": "E:\\the-relaxing-koala-app\\RestaurantIS.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\the-relaxing-koala-app\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -56,6 +61,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.30, 6.0.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.30, 6.0.30]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.30, 6.0.30]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.30, 6.0.30]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -64,7 +87,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400-preview.0.24324.5\\RuntimeIdentifierGraph.json"
         }
       }
     }
