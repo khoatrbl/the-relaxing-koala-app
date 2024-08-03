@@ -40,7 +40,7 @@ https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio
 <p>3. Clone this project to your device using the following command:</p>
 
 ```
-git clone https://github.com/asianmurphyCo/Decentralized-Trading-Platform.git
+git clone https://github.com/khoatrbl/the-relaxing-koala-app.git
 ```
 
 <p>4. In the cloned project, there is a file named <strong>Data.sql</strong>. Open the file using SSMS.</p>
@@ -53,34 +53,28 @@ git clone https://github.com/asianmurphyCo/Decentralized-Trading-Platform.git
 
 <p>7. Once the database is done loading (with the queries appear on screen). <strong>Press F5</strong> or click on <strong>Execute</strong> to create the database.</p>
 
-<p>8. After the queries are done executed and the tables have appeared enter the following SQL code and execute it by selecting just that code line. The values of username and display can be adjusted as preference but do not change the password.</p>
-
-```
-INSERT INTO Account (username displayName password) VALUES (N'admin' N'admin' N'1962026656160185351301320480154111117132155') 
-```
-
-<p>9. You can use the following query to check if the account is properly registered into the database:</p>
+<p>8. You can use the following query to check if there is an account registered into the database:</p>
 
 ```
 SELECT * FROM Account
 ```
 
-<p>10. Now open the project in Visual Studio. Choose <strong>Tools</strong> on the menu bar, and select <strong>Connect to Database</strong>.</p>
+<p>9. Now open the project in Visual Studio. Choose <strong>Tools</strong> on the menu bar, and select <strong>Connect to Database</strong>.</p>
 <img src="https://media.discordapp.net/attachments/1214598042917797928/1268572136616886313/image.png?ex=66ad921e&is=66ac409e&hm=265e1480aa5b822d332a704f1c0272aeff76251c2a7f76dbbd11db884adf1463&=&format=webp&quality=lossless" alt="project-screenshot" width="500">
 
-<p>11. When the <strong>Choose Data Source</strong> pops up, choose <strong>Microsoft SQL Server</strong> and <strong>Continue</strong>.</p>
+<p>10. When the <strong>Choose Data Source</strong> pops up, choose <strong>Microsoft SQL Server</strong> and <strong>Continue</strong>.</p>
 <img src="https://media.discordapp.net/attachments/1214598042917797928/1268572223522738206/image.png?ex=66ad9233&is=66ac40b3&hm=ce318f22b9f7fee91d643a21049442c8afd8b27b9190b1a84d09692cd656ede5&=&format=webp&quality=lossless" alt="project-screenshot" width="500">
 
-<p>12. <strong>Add connection</strong> should now pop up. Here, you enter the Server Name (specified in SSMS) and select <strong>TheRelaxingKoala</strong> database.</p>
+<p>11. <strong>Add connection</strong> should now pop up. Here, you enter the Server Name (specified in SSMS) and select <strong>TheRelaxingKoala</strong> database.</p>
 <img src="https://media.discordapp.net/attachments/1214598042917797928/1268575325323792498/image.png?ex=66ad9516&is=66ac4396&hm=d456f98c026bffbe167f41dfff3850fe830e10fb6aa45b8dc1290afcfbb8c4c6&=&format=webp&quality=lossless&width=536&height=676" alt="project-screenshot" width="500">
 
-<p>13. Click on <strong>Test Connection</strong> and check if we have successfully connected to the database.</p>
+<p>12. Click on <strong>Test Connection</strong> and check if we have successfully connected to the database.</p>
 
-<p>14. Click on <strong>Advanced</strong> to get the connection string and <strong>Copy</strong> it.</p>
+<p>13. Click on <strong>Advanced</strong> to get the connection string and <strong>Copy</strong> it.</p>
 <img src="https://media.discordapp.net/attachments/1214598042917797928/1268576253930246188/image.png?ex=66ad95f3&is=66ac4473&hm=29834c0935c49dbd19d81d032c47f80b9c5f3949fa0642f5f1ca736cb71c7782&=&format=webp&quality=lossless" width="500">
 
-<p>15. Head to folder <strong>DAO -> DataProvider.cs</strong> and paste the connection string into the predefined variable (noted within the file).</p>
+<p>14. Head to folder <strong>DAO -> DataProvider.cs</strong> and paste the connection string into the predefined variable (noted within the file).</p>
 <img src="https://media.discordapp.net/attachments/1214598042917797928/1268576599650074624/image.png?ex=66ad9646&is=66ac44c6&hm=c1534c51b9374fb2c259c50cec81b575142bbfebd2d8b3a6a03f9d7ada42b7b3&=&format=webp&quality=lossless" with="500">
  
-<p>16. The application is now ready. You can run the program, and login using the credentials you added into the database before, with the password of <strong>1</strong>. You can change your password after you have logged in.</p>
+<p>15. The application is now ready. You can run the program, and login using the credentials you added into the database before, with the password of <strong>1</strong>. You can change your password after you have logged in.</p>
 
